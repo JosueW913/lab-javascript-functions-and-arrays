@@ -62,8 +62,10 @@ function sum(arr) {
     if (typeof currentElement === "number" || typeof currentElement === "boolean") {
       total += currentElement
     }
-    if (typeof currentElement === "string") {
+   else if (typeof currentElement === "string") {
       total += currentElement.length;
+    } else {
+      throw new Error ("Unsupported data type sir or ma'am")
     }
   });
   return total;
@@ -106,10 +108,17 @@ const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smar
 // }
 
 function averageWordLength(arr) {
-  if (!arr.length) return null;
-  let result = sum(arr);
+  // if (!arr.length) return null;
+  // let result = sum(arr);
 
-  return result / arr.length;
+  // return result / arr.length;
+  let sum = 0;
+  for(i of arr) {
+    if (typeof i == 'string') {
+      sum += i.length
+    }
+  }
+  return 
 }
 
 
